@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load markdown_extras %}
+
+{% block content %}
+<div class="article">
+    <h2>{{ article.article_name }}</h2>
+    <div class="article_details">
+        <p>الفئة:</p>
+          <sban>{{ article.article_category }}</sban>
+        <p>تاريخ النشر:</p>
+          <sban>{{ article.article_publish_in }}</sban>
+    </div>
+    <div class="article_content">
+        <p>
+            {{ article.article_content | markdown | safe }}
+        </p>
+    </div>
+</div>
+{% endblock %}

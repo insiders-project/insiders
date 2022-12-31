@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="lessons">
+    <h2>اختر درسًا</h2>
+    <div class="lessons-container">
+        {% for lessons_loop in lessons %}
+        <a href="{% url "audio_books_lesson" lessons_loop.pk %}" class="book">{{ lessons_loop.lesson_name }}</a>
+        {% endfor%}
+    </div>
+</section>
+{% endblock %}

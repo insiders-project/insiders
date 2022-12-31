@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2>الأخبار</h2>
+    {% for articles_loop in articles %}
+    <div class="article-container">
+        <img class="img-thumbnail" src="" alt="">
+        <a href="{% url "newz_article" articles_loop.pk %}">
+            <h3>{{ articles_loop.article_name }}</h3>
+        </a>
+        <sban></sban>
+        <sban></sban>
+        <sban></sban>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

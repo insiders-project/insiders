@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+  <a class="navbar-brand">Brand</a>
+  <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="my-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url "index" %}">الرئيسيةكتب docx</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "docx_books_stages" %}" class="nav-link">كتب docx</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "pdf_books_stages" %}" class="nav-link">كتب pdf</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "audio_books_stages" %}" class="nav-link">كتب صوتية</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "newz_articles" %}" class="nav-link">الأخبار</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "about" %}" class="nav-link">عنا</a>
+      </li>
+    
+  </ul>
+  </div>
+</nav>

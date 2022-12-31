@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2>اختر كتابًا</h2>
+    <div class="books-container">
+        {% for books_loop in books %}
+        <a href="{% url "docx_books_book" books_loop.pk %}" class="book">{{ books_loop.book_name }}</a>
+        {% endfor%}
+    </div>
+</section>
+{% endblock %}

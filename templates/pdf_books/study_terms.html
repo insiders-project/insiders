@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <div class="study-terms">
+        <h2>اختر الفصل الدراسي:</h2>
+        <div class="study-terms-container">
+            {% for study_terms_loop in study_terms %}
+            <a href="{% url "pdf_books_books" study_terms_loop.pk %}" class="class">{{ study_terms_loop.study_term_name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
