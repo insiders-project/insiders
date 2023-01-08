@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2>المكتبة الإثرائية:</h2>
+    {% for categories_loop in categories %}
+    <a href="{% url "contents" categories_loop.pk %}" class="category-link">{{ categories_loop.category_name }}</a>
+    {% endfor %}
+</section>
+{% endblock %}

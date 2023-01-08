@@ -36,6 +36,8 @@ INSTALLED_APPS = [
     "docx_books.apps.DocxBooksConfig",
     "pdf_books.apps.PdfBooksConfig",
     "audio_books.apps.AudioBooksConfig",
+    "contents.apps.ContentsConfig",
+    "community.apps.CommunityConfig",
     "admins.apps.AdminsConfig",
     "newz.apps.NewzConfig",
     'django.contrib.admin',

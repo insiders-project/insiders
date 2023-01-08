@@ -22,5 +22,7 @@ urlpatterns = [
     path("pdf-books",include("pdf_books.urls")),
     path("audio-books",include("audio_books.urls")),
     path("newz/",include("newz.urls")),
+    path("contents/",include("contents.urls")),
+    path("community",include("community.urls")),
     path('admin/', admin.site.urls),
 ]
