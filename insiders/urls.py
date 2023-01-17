@@ -18,11 +18,11 @@ from django.urls import path, include
 
 urlpatterns = [
     path("",include("pages.urls")),
-    path("docx-books",include("docx_books.urls")),
-    path("pdf-books",include("pdf_books.urls")),
+    path("books",include("books.urls")),
+    path("scool-brogram",include("scool_bragram.urls")),
     path("audio-books",include("audio_books.urls")),
     path("newz/",include("newz.urls")),
     path("contents/",include("contents.urls")),
-    path("community",include("community.urls")),
+    path("forums",include("forums.urls")),
     path('admin/', admin.site.urls),
 ]

@@ -33,11 +33,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "pages.apps.PagesConfig",
-    "docx_books.apps.DocxBooksConfig",
-    "pdf_books.apps.PdfBooksConfig",
+    "books.apps.BooksConfig",
     "audio_books.apps.AudioBooksConfig",
+    "scool_brogram.apps.apps.ScoolbrogramConfige",
     "contents.apps.ContentsConfig",
-    "community.apps.CommunityConfig",
+    "forums.apps.ForumsConfig",
     "admins.apps.AdminsConfig",
     "newz.apps.NewzConfig",
     'django.contrib.admin',

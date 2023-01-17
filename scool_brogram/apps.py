@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CommunityConfig(AppConfig):
+class ScoolBrogramConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'community'
+    name = 'scool_brogram'

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="get" action="{% url "books" %}" class="form-horizontal">
+    <div class="form-group">
+    <label class="control-label" for="stage">المرحلة</label>
+    <select name="stage" id="stage">
+        {% for stages_loop in stages %}}
+        <option value="{{ stages_loop.id }}">{{ stages_loop.stage_name }}</option>
+        {% endfor %}
+    </select>
+    <label class="control-label" for="class">الصف</label>
+    <select name="class" id="class">
+        {% for classes_loop in classes %}}
+        <option value="{{ classes_loop.id }}">{{ classes_loop.class_name }}</option>
+        {% endfor %}
+    </select>
+    <label class="control-label" for="study_term">الفصل الدراسي</label>
+    <select name="study_term" id="study_term">
+        {% for study_terms_loop in study_terms %}}
+        <option value="{{ study_terms_loop.id }}">{{ study_terms_loop.study_term_name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="إرسال">
+</div>
+</form>
+{% endblock %}
