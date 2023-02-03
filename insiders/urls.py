@@ -18,9 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path("",include("pages.urls")),
-    path("books",include("books.urls")),
-    path("scool-brogram",include("scool_bragram.urls")),
-    path("audio-books",include("audio_books.urls")),
+    path("study/",include("study_section.urls")),
+    path("scool-brogram",include("scool_brogram.urls")),
     path("newz/",include("newz.urls")),
     path("contents/",include("contents.urls")),
     path("forums",include("forums.urls")),

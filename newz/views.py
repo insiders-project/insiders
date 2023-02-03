@@ -4,7 +4,7 @@ from .models import Newz_categories, Newz_articles
 # Create your views here.
 
 def newz_articles(request):
-    articles =Newz_articles.objects.all()
+    articles =Newz_articles.objects.filter(article_is_active=True).order_by("-article_publish_in")
     return render(request,"newz/articles.html",{
         "articles":articles
     })

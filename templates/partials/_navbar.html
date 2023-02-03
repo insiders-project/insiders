@@ -1,5 +1,9 @@
+{% load static %}
 <nav class="navbar navbar-expand-lg navbar-danger bg-danger sticky-top">
-  <a class="navbar-brand">Brand</a>
+  <a href="#" class="navbar-brand">
+    <img src="{% static "img/alnoor_logo.png" %}" alt="" style="width:40px; borrder-radius:50%">
+
+  </a>
   <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,10 +13,13 @@
         <a class="nav-link" href="{% url "index" %}">الرئيسيةكتب docx</a>
       </li>
       <li class="nav-item">
-        <a href="{% url "serch" %}" class="nav-link">الكتب</a>
+        <a href="{% url "study_stages" %}" class="nav-link">ركن الدراسة</a>
       </li>
       <li class="nav-item">
-        <a href="{% url "audio_books_stages" %}" class="nav-link">كتب صوتية</a>
+        <a href="{% url "scool_brogram_stages" %}" class="nav-link">الجدول المدرسي</a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url "forums" %}" class="nav-link">المنتديات</a>
       </li>
       <li class="nav-item">
         <a href="{% url "contents_categories" %}" class="nav-link">المحتويات</a>

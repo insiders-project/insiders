@@ -2,13 +2,17 @@
 {% load markdown_extras %}
 
 {% block content %}
-<div class="article">
-    <h2>{{ article.article_name }}</h2>
+<section class="page-content">
+  <div class="article">
+    <h2 >{{ article.article_name }}</h2>
     <div class="article_details">
         <p>الفئة:</p>
           <sban>{{ article.article_category }}</sban>
         <p>تاريخ النشر:</p>
           <sban>{{ article.article_publish_in }}</sban>
+          <p>نشر بواسطة:</p>
+          <sban>{{ article.article_created_by }}</sban>
+        </div>
     </div>
     <div class="article_content">
         <p>
@@ -16,4 +20,6 @@
         </p>
     </div>
 </div>
+</section>
+
 {% endblock %}

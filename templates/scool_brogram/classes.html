@@ -1,0 +1,13 @@
+{%extends "base.html"%}
+{% block content %}
+<section class="page-content">
+    <h2 class="text-center">الجدول المدرسي > اختر الصف:</h2>
+    <div class="vlasses-container">
+
+        {% for classes_loop in classes %}
+        <a href="{% url "scool_brogram_sections" classes_loop.pk %}" class="class">{{ classes_loop.class_name }}</a>
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

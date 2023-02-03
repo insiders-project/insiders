@@ -1,4 +1,43 @@
 {% extends "base.html" %}
 {% load markdown_extras %}
 {% block content %}
+<section class="page-content">
+    <div class="container-fluid bg-light">
+        <h2>{{ post.post_name }}</h2>
+        <p>المنتدى:{{ post.post_forum }}</p>
+        <p>أضيف بواسطة:{{ post.posted_by }}</p>
+        <p>أضيف بتاريخ:{{ post.post_published_in }}</p>
+        <p>{{ post.post_content | markdown | safe }}</p>
+    </div>
+    <details class="class">
+        <summary>إضافة تعليق</summary>
+        <div>
+            <form method="post" action=" ">
+                {% csrf_token %}
+                <div class="container-fluid bg-dark">
+                    <label for="added_by" class="">الاسم:</label>
+                    <p>من الممكن أن تكتب كنيتك أو اسمك الأحادي أو أي كلمة مثل" مجهول" إن أردت الحفاظ على خصوصيتك.</p>
+                    <input class="form-control" type="text" name="added_by" id="added_by" required>
+                    <div class="form-group">
+                        <label for="content" class="">محتوى التعليق:</label>
+                        <textarea id="content" class="form-control" name="content" required rows="3"></textarea>
+                    </div>
+                    <input type="submit" value="إرسال" class="btn btn-lg btn-block btn-info">
+                </div>
+            </form>
+        </div>
+    </details>
+    <section class="container-fluid">
+        {% for comments_loop in comments %}
+        <div class="card bg-dark">
+            <div class="card-body">
+                <div class="container-fluid bg-light">
+                <h3>{{ comments_loop.commented_by }}, {{ comments_loop.comment_published_in }}</h3>
+                <p>{{ comments_loop.comment_content | markdown | safe }}</p>
+                <a href="{% url "forums_replies" comments_loop.pk %}" class="text-center btn btn-info">عرض الردود...</a>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section></section>
 {% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2 class="text-center">ركن الدراسة > اختر الدرس:</h2>
+    <div class="lessons-container">
+        {% for lessons_loop in lessons %}
+        <a href="{% url "study_lesson" lessons_loop.pk %}" class="book">{{ lessons_loop.lesson_name }}</a>
+        {% endfor%}
+    </div>
+</section>
+{% endblock %}

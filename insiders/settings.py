@@ -32,14 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    "pages.apps.PagesConfig",
-    "books.apps.BooksConfig",
-    "audio_books.apps.AudioBooksConfig",
-    "scool_brogram.apps.apps.ScoolbrogramConfige",
+    "pages.apps.PagesConfig",   
+    "scool.apps.ScoolConfig",
+    "study_section.apps.StudySectionConfig",
+    "scool_brogram.apps.ScoolBrogramConfig",
     "contents.apps.ContentsConfig",
     "forums.apps.ForumsConfig",
     "admins.apps.AdminsConfig",
-    "newz.apps.NewzConfig",
+    "newz.apps.NewzConfig",\
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -56,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "django.middleware.csrf.CsrfViewMiddleware",
 ]
 
 ROOT_URLCONF = 'insiders.urls'

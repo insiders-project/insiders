@@ -1,4 +1,40 @@
 {% extends "base.html" %}
 {% load markdown_extras %}
 {% block content %}
+<section class="page-content">
+    <div class="container-fluid bg-light">
+        <h3>{{ comment.commented_by }}, {{ comment.comment_publish }}</h3>
+        <p>{{ comment.comment_content | markdown | safe }}</p>
+    </div>
+    <details class="class">
+        <summary>إضافة رد</summary>
+        <div>
+            <form method="post" action=" ">
+                {% csrf_token %}
+                <div class="container-fluid bg-dark">
+                    <label for="added_by" class="">الاسم:</label>
+                    <p>من الممكن أن تكتب كنيتك أو اسمك الأحادي أو أي كلمة مثل" مجهول" إن أردت الحفاظ على خصوصيتك.</p>
+                    <input class="form-control" type="text" name="added_by" id="added_by">
+                    <div class="form-group">
+                        <label for="content" class="">محتوى التعليق:</label>
+                        <textarea id="content" class="form-control" name="content" rows="3"></textarea>
+                    </div>
+                    <input type="submit" value="إرسال" class="bg-info">
+    
+                </div>
+            </form>
+        </div>
+    </details>
+    <section class="container-fluid">
+        {% for replies_loop in replies %}
+        <div class="card bg-dark">
+            <div class="card-body">
+                <div class="container-fluid bg-light">
+                <h4>{{ replies_loop.repliesed_by }}, {{ replies_loop.reply_published_in }}</h4>
+                <p>{{ replies_loop.reply_content | markdown | safe }}</p>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+    </section></section>
 {% endblock %}

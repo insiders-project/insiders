@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <ul class="nav nav-tabs bg-info">
+        <li class="nav-itim tab">
+            <a href="#tab1" class="nav-link active" data-toggle="tab">مقروء</a>
+        </li>
+        <li class="nav-itim tab">
+            <a href="#tab2" class="nav-link" data-toggle="tab">pdf</a>
+        </li>
+        <li class="nav-itim tab">
+            <a href="#tab3" class="nav-link" data-toggle="tab">صوت</a>
+        </li>
+        <li class="nav-itim tab">
+            <a href="#tab4" class="nav-link" data-toggle="tab">فيديو</a>
+        </li>
+    </ul>
+    <main class="tab-content">
+        <section class="tab-pane fade show active" id="tab1">
+            <h2 class="text-start">الروابط:</h2>
+            <div class="urls-container">
+                {% for docx_urls_loop in docx_urls %}
+                <a href="{{ docx_urls_loop.url }}" class="url">{{ docx_urls_loop.url_name }}</a>
+                {% endfor %}
+            </div>
+            <h2 class="text-start">الملفات:</h2>
+            <div class="urls-container">
+                {% for docx_files_loop in docx_files %}
+                <div class="container bg-info">
+                        <a href="{{ docx_files_loop.file }}" class="file">{{ docx_files_loop.file_name }}</a>
+
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="tab-pane fade" id="tab2">
+            <h3>الروابط:</h3>
+            <div class="urls-container">
+                {% for pdf_urls_loop in pdf_urls %}
+                <a href="{{ pdf_urls_loop.url }}" class="url">{{ pdf_urls_loop.url_name }}</a>
+                {% endfor %}
+            </div>
+            <h3>الملفات:</h3>
+            <div class="urls-container">
+                {% for pdf_files_loop in pdf_files %}
+                <a href="{{ pdf_files_loop.file }}" class="file">{{ pdf_files_loop.file_name }}</a>
+                {% endfor %}
+            </div>
+
+        </section>
+        <section class="tab-pane fade" id="tab3">
+            <h3>الروابط:</h3>
+            <div class="urls-container">
+                {% for audio_urls_loop in audio_urls %}
+                <a href="{{ audio_urls_loop.url }}" class="url">{{ audio_urls_loop.url_name }}</a>
+                {% endfor %}
+            </div>
+            <h3>الملفات:</h3>
+            <div class="urls-container">
+                {% for audio_files_loop in audio_files %}
+                <a href="{{ audio_files_loop.file }}" class="file">{{ audio_files_loop.file_name }}</a>
+                {% endfor %}
+            </div>
+
+        </section>
+        <section class="tab-pane fade" id="tab4">
+            <h3>الروابط:</h3>
+            <div class="urls-container">
+                {% for vidio_urls_loop in vidio_urls %}
+                <div class="container-fluid bg-info">
+                        <a href="{{ vidio_urls_loop.url }}" class="url">{{ vidio_urls_loop.url_name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+            <h3>الملفات:</h3>
+            <div class="urls-container">
+                {% for vidio_files_loop in vidio_files %}
+                <div class="container-fluid bg-warning">
+                    <a href="{{ vidio_files_loop.file }}" class="file">{{ vidio_files_loop.file_name }}</a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </section>
+    </main>
+    
+</section>
+{% endblock %}

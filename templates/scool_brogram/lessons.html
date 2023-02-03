@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block content%}
+<section class="page-content">
+    <ul class="nav nav-tabs bg-info">
+        <li class="nav-itim tab-to">
+            <a href="#tab1" class="nav-link active" data-toggle="tab">الأحد</a>
+        </li>
+        <li class="nav-itim tab-to">
+            <a href="#tab2" class="nav-link" data-toggle="tab">الإثنين</a>
+        </li>
+        <li class="nav-itim tab-to">
+            <a href="#tab3" class="nav-link" data-toggle="tab">الثلاثاء</a>
+        </li>
+        <li class="nav-itim tab-to">
+            <a href="#tab4" class="nav-link" data-toggle="tab">الأربعاء</a>
+        </li>
+        <li class="nav-itim tab-to">
+            <a href="#tab5" class="nav-link" data-toggle="tab">الخميس</a>
+        </li>
+    </ul>
+    <main class="tab-content">
+        <section class="tab-pane fade show active" id="tab1">
+            <h2>الأحد:</h2>
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>الحصة</th>
+                        <th>المادة</th>
+                        <th>من</th>
+                        <th>إلى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day_1_loop in day_1 %}
+                    <tr>
+                        <td>{{ day_1_loop.lesson_time.time_name }}</td>
+                        <td>{{ day_1_loop.lesson_subject }}</td>
+                        <td>{{ day_1_loop.lesson_time.time_start_from }}</td>
+                        <td>{{ day_1_loop.lesson_time.time_end_in }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-pane fade" id="tab2">
+            <h2>الإثنين:</h2>
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>الحصة</th>
+                        <th>المادة</th>
+                        <th>من</th>
+                        <th>إلى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day_2_loop in day_2 %}
+                    <tr>
+                        <td>{{ day_2_loop.lesson_time.time_name }}</td>
+                        <td>{{ day_2_loop.lesson_subject }}</td>
+                        <td>{{ day_2_loop.lesson_time.time_start_from }}</td>
+                        <td>{{ day_2_loop.lesson_time.time_end_in }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-pane fade" id="tab3">
+            <h2>الثلاثاء:</h2>
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>الحصة</th>
+                        <th>المادة</th>
+                        <th>من</th>
+                        <th>إلى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day_3_loop in day_3 %}
+                    <tr>
+                        <td>{{ day_3_loop.lesson_time.time_name }}</td>
+                        <td>{{ day_3_loop.lesson_subject }}</td>
+                        <td>{{ day_3_loop.lesson_time.time_start_from }}</td>
+                        <td>{{ day_3_loop.lesson_time.time_end_in }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-pane fade" id="tab4">
+            <h2>الأربعاء:</h2>
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>الحصة</th>
+                        <th>المادة</th>
+                        <th>من</th>
+                        <th>إلى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day_4_loop in day_4 %}
+                    <tr>
+                        <td>{{ day_4_loop.lesson_time.time_name }}</td>
+                        <td>{{ day_4_loop.lesson_subject }}</td>
+                        <td>{{ day_4_loop.lesson_time.time_start_from }}</td>
+                        <td>{{ day_4_loop.lesson_time.time_end_in }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="tab-pane fade" id="tab5">
+            <h2>الخميس:</h2>
+            <table class="table table-light">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>الحصة</th>
+                        <th>المادة</th>
+                        <th>من</th>
+                        <th>إلى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for day_5_loop in day_5 %}
+                    <tr>
+                        <td>{{ day_5_loop.lesson_time.time_name }}</td>
+                        <td>{{ day_5_loop.lesson_subject }}</td>
+                        <td>{{ day_5_loop.lesson_time.time_start_from }}</td>
+                        <td>{{ day_5_loop.lesson_time.time_end_in }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</section>
+{% endblock %}

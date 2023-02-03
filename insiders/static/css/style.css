@@ -13,15 +13,8 @@ html {
 }
 body {
   color: white;
+  font-size: 150%;
   box-sizing: border-box;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-align: center;
 }
 nav i {
   color: black;
@@ -30,11 +23,23 @@ nav .menu-content {
   width: 100%;
   padding: 10px 0px;
 }
-nav .tab {
+.tab {
   width: calc(96% / 4);
   margin-left: 1%;
 }
-nav .tab a {
+.tab-to {
+  width: calc(95% / 5);
+  margin-left: 1%;
+}
+.tab-to a {
+  color: black;
+  text-decoration: none;
+}
+.tab a {
+  color: black;
+  text-decoration: none;
+}
+.tab a, .tab-to a {
   color: black;
   height: 50px;
   font-size: 10px;

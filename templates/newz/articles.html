@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="page-content">
-    <h2>الأخبار</h2>
+    <h2 class="text-center">الأخبار</h2>
     {% for articles_loop in articles %}
-    <div class="article-container">
-        <img class="img-thumbnail" src="" alt="">
-        <a href="{% url "newz_article" articles_loop.pk %}">
-            <h3>{{ articles_loop.article_name }}</h3>
-        </a>
-        <p>{{ articles_loop.article_publish_in }}</p>
-        <sban></sban>
-        <sban></sban>
-        <sban></sban>
+    <div class="card bg-dark">
+        <div class="card-body">
+                <div class="container-fluid bg-light">
+                <h3 class="card-title">{{ articles_loop.article_name }}</h3>
+                <p class="card-text">{{ articles_loop.article_created_by }}, {{ articles_loop.article_category }}, {{ articles_loop.article_publish_in }}</p>
+                <a href="{% url "newz_article" articles_loop.pk %}" class="text-center btn btn-info">قراءة المزيد...</a>
+            </div>
+        </div>
+    
     </div>
     {% endfor %}
 </section>

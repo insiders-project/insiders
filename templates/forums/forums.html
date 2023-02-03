@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2 class="text-center">المنتديات > اختر منتدى:</h2>
+    <div class="forums-container">
+        {% for forums_loop in forums %}
+        <div class="container-fluid bg-dark">
+            <div class="card bg-dark">
+                <div class="card-body">
+                    <div class="container-fluid bg-primary">
+                    <h3 class="card-title text-center">{{ forums_loop.forum_name }}</h3>
+                    <p class="card-text text-center">{{ forums_loop.forum_description }}</p>
+                    <a href="{% url "forums_posts" forums_loop.pk %}" class="text-center btn btn-warning btn-lg btn-block   ">الانتقال للمنتدى</a>
+                </div>
+                </div>
+            </div>
+        </div>
+{% endfor %}
+    </div>
+</section>
+{% endblock %}

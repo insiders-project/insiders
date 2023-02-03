@@ -1,3 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
+<section class="page-content">
+    <h2 class="text-center">المنشورات \ {{ forum.forum_name }}</h2>
+    <details class="class">
+        <summary>إضافة منشور</summary>
+        <div>
+            <form method="post" action=" ">
+                {% csrf_token %}
+                <div class="container-fluid bg-dark">
+                    <label for="title" class="">عنوان المنشور:</label>
+                    <input class="form-control" type="text" name="title" id="title" required>
+                    <label for="added_by" class="">الاسم:</label>
+                    <p>من الممكن أن تكتب كنيتك أو اسمك الأحادي أو أي كلمة مثل" مجهول" إن أردت الحفاظ على خصوصيتك.</p>
+                    <input class="form-control" type="text" name="added_by" id="added_by" required>
+                    <div class="form-group">
+                        <label for="content" class="">محتوى المنشور:</label>
+                        <textarea id="content" class="form-control" name="content" required rows="3"></textarea>
+                    </div>
+                    <input type="submit" value="إرسال" class="btn btn-lg btn-block btn-info">
+                </div>
+            </form>
+        </div>
+    </details>
+    <div class="posts-container">
+        {% for posts_loop in posts %}
+        <div class="card bg-dark">
+            <div class="card-body">
+                <div class="container-fluid bg-light">
+                                    <h3 class="card-title">{{ posts_loop.post_name }}</h3>
+                <p class="card-text">{{ posts_loop.post_forum }},{{ posts_loop.posted_by }}, {{ posts_loop.post_published_in }}</p>
+                <a href="{% url "forums_post" posts_loop.pk %}" class="text-center btn btn-info">قراءة...</a>
+
+                </div>
+            </div>
+        </div>
+{% endfor %}
+    </div>
+</section>
 {% endblock %}
