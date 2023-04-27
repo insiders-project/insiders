@@ -6,6 +6,12 @@
         <div class="classes-container">
             {% for classes_loop in classes %}
             <a href="{% url "study_study_terms" classes_loop.pk %}" class="class">{{ classes_loop.class_name }}</a>
+            <div class="container-fluid">
+                <button class="btn btn-lg btn-block btn-warning">
+                    <a href="{% url "add_study_term" classes_loop.pk %}" class="btn btn-lg btn-block btn-warning">إضافة فصل دراسي</a>
+                </button>
+            </div>
+
             {% endfor %}
         </div>
     </div>

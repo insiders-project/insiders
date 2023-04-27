@@ -6,6 +6,11 @@
         <div class="stages-container">
             {% for stages_loop in stages %}
             <a href="{% url "study_classes" stages_loop.pk %}" class="stage">{{ stages_loop.stage_name }}</a>
+            <div class="container-fluid">
+                <button class="btn btn-lg btn-block btn-warning">
+                    <a href="{% url "add_class" stages_loop.pk %}" class="btn btn-lg btn-block btn-warning">إضافة صف</a>
+                </button>
+            </div>
             {% endfor %}
         </div>
     </div>

@@ -27,7 +27,7 @@
             <div class="urls-container">
                 {% for docx_files_loop in docx_files %}
                 <div class="container bg-info">
-                        <a href="{{ docx_files_loop.file }}" class="file">{{ docx_files_loop.file_name }}</a>
+                        <a href="{{ docx_files_loop.file.url }}" class="file">{{ docx_files_loop.file_name }}</a>
 
                 </div>
                 {% endfor %}
@@ -43,7 +43,7 @@
             <h3>الملفات:</h3>
             <div class="urls-container">
                 {% for pdf_files_loop in pdf_files %}
-                <a href="{{ pdf_files_loop.file }}" class="file">{{ pdf_files_loop.file_name }}</a>
+                <a href="{{ pdf_files_loop.file.url }}" class="file">{{ pdf_files_loop.file_name }}</a>
                 {% endfor %}
             </div>
 
@@ -58,7 +58,7 @@
             <h3>الملفات:</h3>
             <div class="urls-container">
                 {% for audio_files_loop in audio_files %}
-                <a href="{{ audio_files_loop.file }}" class="file">{{ audio_files_loop.file_name }}</a>
+                <a href="{{ audio_files_loop.file.url }}" class="file">{{ audio_files_loop.file_name }}</a>
                 {% endfor %}
             </div>
 
@@ -76,7 +76,7 @@
             <div class="urls-container">
                 {% for vidio_files_loop in vidio_files %}
                 <div class="container-fluid bg-warning">
-                    <a href="{{ vidio_files_loop.file }}" class="file">{{ vidio_files_loop.file_name }}</a>
+                    <a href="{{ vidio_files_loop.file.url }}" class="file">{{ vidio_files_loop.file_name }}</a>
                 </div>
                 {% endfor %}
             </div>

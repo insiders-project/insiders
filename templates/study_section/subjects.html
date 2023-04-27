@@ -5,6 +5,12 @@
     <div class="books-container">
         {% for subjects_loop in subjects %}
         <a href="{% url "study_units" subjects_loop.pk %}" class="book">{{ subjects_loop.subject_name }}</a>
+        <div class="container-fluid">
+            <button class="btn btn-lg btn-block btn-warning">
+                <a href="{% url "add_unit" subjects_loop.pk %}" class="btn btn-lg btn-block btn-warning">إضافة وحدة</a>
+            </button>
+        </div>
+        
         {% endfor%}
     </div>
 </section>

@@ -4,27 +4,27 @@ from .models import *
 
 # Create your views here.
 def stages (request):
-    stages =Scool_stages.objects.filter(stage_is_active=True)
+    stages =School_stages.objects.filter(stage_is_active=True)
     return render(request,"scool_brogram/stages.html",{
         "stages":stages,
     })
 
 def classes (request,pk):
-    stage =Scool_stages.objects.get(pk=pk)
-    classes =Scool_classes.objects.filter(class_stage=stage,class_is_active=True)
+    stage =School_stages.objects.get(pk=pk)
+    classes =School_classes.objects.filter(class_stage=stage,class_is_active=True)
     return render(request,"scool_brogram/classes.html",{
         "classes":classes,
     })
 
 def sections (request,pk):
-    Class =Scool_classes.objects.get(pk=pk)
-    sections =Scool_sections.objects.filter(section_class=Class,section_is_active=True)
+    Class =School_classes.objects.get(pk=pk)
+    sections =School_sections.objects.filter(section_class=Class,section_is_active=True)
     return render(request,"scool_brogram/sections.html",{
         "sections":sections,
     })
 
 def lessons(request,pk):
-    section =Scool_sections.objects.get(pk=pk)
+    section =School_sections.objects.get(pk=pk)
     day_1 =Brogram_lessons.objects.filter(lesson_section=section,lesson_day="الأحد",lesson_is_active=True)
     day_2 =Brogram_lessons.objects.filter(lesson_section=section,lesson_day="الإثنين",lesson_is_active=True)
     day_3 =Brogram_lessons.objects.filter(lesson_section=section,lesson_day="الثلاثاء",lesson_is_active=True)
