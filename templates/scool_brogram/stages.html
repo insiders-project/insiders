@@ -2,6 +2,27 @@
 {% block content %}
 <section class="page-content">
     <div class="stages">
+        <div class="container-fluid">
+            <details class="btn btn-lg btn-block btn-warning">
+                <summary>إضافة مرحلة</summary>
+                <div class="container-fluid bg-dark">
+                    <h2>إضافة مرحلة</h2>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">اسم المرحلة:</label>
+                            <input id="name" class="form-control" type="text" name="name">
+                        </div>
+                        <div class="form-check">
+                            <input id="my-input" class="form-check-input" type="checkbox" name="is_active" value="True">
+                            <label for="my-input" class="form-check-label">المرحلة عامة</label>
+                                  </div>
+                                  <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+                    </form>                    
+                </div>
+            </details>
+        </div>
+
         <h2 class="text-center">الجدول المدرسي > اختر المرحلة:</h2>
         <div class="stages-container">
             {% for stages_loop in stages %}

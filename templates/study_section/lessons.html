@@ -1,11 +1,36 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="page-content">
+    <div class="lessons">
+        {% if request.user.is_authenticated %}
+        <div class="container-fluid">
+            <details class="btn btn-lg btn-block btn-warning">
+                <summary>إضافة درس</summary>
+                <div class="container-fluid bg-dark">
+                    <h2 class="text-center">إضافة درس</h2>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">اسم الدرس:</label>
+                            <input id="name" class="form-control" type="text" name="name">
+                        </div>
+                        <div class="form-check">
+                            <input id="my-input" class="form-check-input" type="checkbox" name="is_active" value="True">
+                            <label for="my-input" class="form-check-label">الدرس عام</label>
+                                  </div>
+                                  <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+                    </form>                    
+                </div>
+            </details>
+        </div>
+        {% endif %}
+
     <h2 class="text-center">ركن الدراسة > اختر الدرس:</h2>
     <div class="lessons-container">
         {% for lessons_loop in lessons %}
         <a href="{% url "study_lesson" lessons_loop.pk %}" class="book">{{ lessons_loop.lesson_name }}</a>
         {% endfor%}
     </div>
+</div>
 </section>
 {% endblock %}

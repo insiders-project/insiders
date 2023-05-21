@@ -21,6 +21,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("",include("pages.urls")),
+    path ("admins",include("admins.urls")),
     path("study/",include("study_section.urls")),
     path("scool-brogram",include("scool_brogram.urls")),
     path("newz/",include("newz.urls")),

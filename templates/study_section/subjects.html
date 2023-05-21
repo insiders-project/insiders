@@ -1,15 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="page-content">
-    <h2 class="text-center">ركن لدراسة > اختر المادة:</h2>
+    <div class="subjects">
+        {% if request.user.is_authenticated %}
+        <div class="container-fluid">
+            <details class="btn btn-lg btn-block btn-warning">
+                <summary>إضافة مادة</summary>
+                <div class="container-fluid bg-dark">
+                    <h2 class="text-center">إضافة مادة</h2>
+                    <form method="post" action="">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="name">اسم المادة:</label>
+                            <input id="name" class="form-control" type="text" name="name">
+                        </div>
+                        <div class="form-check">
+                            <input id="my-input" class="form-check-input" type="checkbox" name="is_active" value="True">
+                            <label for="my-input" class="form-check-label">المادةة عامة</label>
+                                  </div>
+                                  <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+                    </form>                    
+                </div>
+            </details>
+        </div>
+        {% endif %}
+    </div>
+    <h2 class="text-center">ركن الدراسة > اختر المادة:</h2>
     <div class="books-container">
         {% for subjects_loop in subjects %}
         <a href="{% url "study_units" subjects_loop.pk %}" class="book">{{ subjects_loop.subject_name }}</a>
-        <div class="container-fluid">
-            <button class="btn btn-lg btn-block btn-warning">
-                <a href="{% url "add_unit" subjects_loop.pk %}" class="btn btn-lg btn-block btn-warning">إضافة وحدة</a>
-            </button>
-        </div>
         
         {% endfor%}
     </div>

@@ -15,6 +15,72 @@
             <a href="#tab4" class="nav-link" data-toggle="tab">فيديو</a>
         </li>
     </ul>
+    {% if request.user.is_authenticated %}
+    <section class="container-fluid">
+        <details class="btn btn-lg btn-block btn-warning">
+            <summary>إضافة رابط</summary>
+            <form method="post" action="" class="">
+                {% csrf_token %}
+                <h2><text-center>إضافة رابط</text-center></h2>
+                <div class="form-group">
+                    <label for="url_name">اسم الرابط:</label>
+                    <input id="url_name" class="form-control" type="text" name="url_name">
+                </div>
+                <div class="form-group">
+                    <label for="url_type">نوع الرابط</label>
+                    <select id="url_type" class="custom-select" name="url_type">
+                        <option value="docx">وورد (word)</option>
+                        <option value="pdf">بي دي إف (pdf)</option>
+                        <option value="audio">صوت (audio)</option>
+                        <option value="vidio">فيديو (vidio)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="url">الرابط:</label>
+                    <input id="url" class="form-control" type="text" name="url">
+                </div>
+                <div class="form-check">
+                    <input id="my-input" class="form-check-input" type="checkbox" name="url_is_active" value="True">
+                    <label for="my-input" class="form-check-label">الرابط عام</label>
+                          </div>
+                          <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+
+    </form>
+        </details>
+    </section>
+    <section class="containet-fluid">
+        <details class="btn btn-lg btn-block btn-warning">
+            <summary>إضافة ملف</summary>
+            <form method="post" action="" class="">
+                {% csrf_token %}
+                <h2><text-center>إضافة ملف</text-center></h2>
+                <div class="form-group">
+                    <label for="url_name">اسم الرابط:</label>
+                    <input id="url_name" class="form-control" type="text" name="file_name">
+                </div>
+                <div class="form-group">
+                    <label for="url_type">نوع الرابط</label>
+                    <select id="url_type" class="custom-select" name="file_type">
+                        <option value="docx">وورد (word)</option>
+                        <option value="pdf">بي دي إف (pdf)</option>
+                        <option value="audio">صوت (audio)</option>
+                        <option value="vidio">فيديو (vidio)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="my-input">الملف</label>
+                    <input id="my-input" class="form-control-file" type="fiالملفname="file">
+                </difilev>
+                <div class="form-check">
+                    <input id="my-input" class="form-check-input" type="checkbox" name="file_is_active" value="True">
+                    <label for="my-input" class="form-check-label">الملف عام</label>
+                          </div>
+                          <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+
+    </form>
+        </details>
+    </section>
+    {% endif %}
     <main class="tab-content">
         <section class="tab-pane fade show active" id="tab1">
             <h2 class="text-start">الروابط:</h2>

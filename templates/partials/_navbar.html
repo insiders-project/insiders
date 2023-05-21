@@ -12,6 +12,12 @@
       <li class="nav-item">
         <a class="nav-link" href="{% url "index" %}">الرئيسيةكتب docx</a>
       </li>
+      {% if request.user.is_authenticated %}
+      {% else %}
+      <li class="nav-item">
+        <a href="{% url "login_admin" %}" class="nav-link">تسجيل الدخول</a>
+      </li>
+      {% endif %}
       <li class="nav-item">
         <a href="{% url "study_stages" %}" class="nav-link">ركن الدراسة</a>
       </li>

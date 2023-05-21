@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+    <h2>إضافة مرحلة</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="name">اسم المرحلة:</label>
+        <input id="name" class="form-control" type="text" name="name">
+    </div>
+    <div class="form-check">
+        <input id="my-input" class="form-check-input" type="checkbox" name="is_active" value="1">
+        <label for="my-input" class="form-check-label">المرحلة عامة</label>
+              </div>
+              <input type="submit" value="إرسال" class="btn btn-lg btn-block btn-info">
+              
+</form>
+</section>
+{% endblock %}

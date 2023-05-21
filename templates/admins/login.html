@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-content">
+{% if request.user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+        <p>تمت عملية تسجيل الدخول بنجاح</p>
+    </div>
+{% else %}
+<h2>تسجيل الدخول</h2>
+<form method="post" action="">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="username">اسم المستخدم:</label>
+        <input id="username" class="form-control" type="text" name="username">
+    </div>
+    <div class="form-group">
+        <label for="password">كلمة المرور:</label>
+        <input id="password" class="form-control" type="password" name="password">
+    </div>
+              <input type="submit" value="إضافة" class="btn btn-lg btn-block btn-info">       
+
+</form>
+{% endif %}
+</section>
+{% endblock %}
